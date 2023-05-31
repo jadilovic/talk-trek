@@ -1,0 +1,49 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 700;
+	font-size: 1em;
+}
+
+.navigation,
+.links,
+.profile {
+	display: flex;
+	align-items: center;
+	column-gap: 2em;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	column-gap: 0.5em;
+}
+
+.logo:hover {
+	color: hsl(257, 27%, 26%);
+}
+
+.links,
+.profile {
+	color: hsl(257, 27%, 26%);
+	transition: background-color 0.3s ease;
+}
+
+.link:hover {
+	color: hsl(257, 27%, 56%);
+	cursor: pointer;
+}
+
+.signup {
+	padding: 1em 2em;
+	color: white;
+	background-color: hsl(180, 66%, 49%);
+	border-radius: 2em;
+	transition: background-color 0.3s ease;
+}
+
+.signup:hover {
+	cursor: pointer;
+	background-color: hsl(180, 66%, 69%);
+}
