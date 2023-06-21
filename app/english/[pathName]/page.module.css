@@ -1,0 +1,16 @@
+.card {
+	background-color: white;
+	padding: 2em;
+	text-align: center;
+	border-radius: 1em;
+	border: 0.1em solid hsl(0, 0%, 75%);
+}
+
+.cardTitle {
+	font-size: 1.3em;
+	margin-bottom: 0.5em;
+}
+
+.card:hover {
+	border: 0.1em solid hsl(180, 66%, 49%);
+}

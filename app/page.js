@@ -17,7 +17,7 @@ export default function Home() {
 						generated exercises and discovering new horizons in language
 						learning.
 					</p>
-					<Link href="/english" className={styles.start}>
+					<Link href="/english" className="start">
 						Get Started
 					</Link>
 				</article>
@@ -72,7 +72,7 @@ export default function Home() {
 					<h5 className={styles.middleTitle}>
 						Start your TalkTrek adventure today!
 					</h5>
-					<div className={styles.start}>Get Started</div>
+					<div className="start">Get Started</div>
 				</div>
 			</section>
 		</main>

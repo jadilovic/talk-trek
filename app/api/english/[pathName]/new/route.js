@@ -23,9 +23,16 @@ export const GET = async (req, { params }) => {
 			messages: [{ role: 'user', content: exercise.aiPrompt }],
 		});
 
+		const messageContentArr =
+			response.data.choices[0].message.content.split(' Verb tense used: ');
+		const sentence = messageContentArr[0].replace('Sentence: ', '');
+		const tense = messageContentArr[1];
+
 		const newSentence = new VerbTense({
-			sentence: response.data.choices[0].message.content,
-			tense: 'from ai to do',
+			// sentence: response.data.choices[0].message.content,
+			// tense: 'from ai to do',
+			sentence,
+			tense,
 		});
 
 		await newSentence.save();

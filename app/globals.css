@@ -86,6 +86,7 @@ body {
 }
 
 body {
+	min-height: 100vh;
 	color: rgb(var(--foreground-rgb));
 	background: linear-gradient(
 			to bottom,
@@ -140,6 +141,36 @@ ul {
 .card:hover {
 	border: 0.1em solid hsl(180, 66%, 49%);
 	cursor: pointer;
+}
+
+.start {
+	padding: 1em 2em;
+	color: white;
+	background-color: hsl(180, 66%, 49%);
+	border-radius: 2em;
+	letter-spacing: 0.1em;
+	width: fit-content;
+	transition: background-color 0.3s ease;
+}
+
+.start:hover {
+	cursor: pointer;
+	background-color: hsl(180, 66%, 69%);
+}
+
+.showHide {
+	padding: 1em 2em;
+	color: white;
+	background-color: hsl(257, 27%, 26%);
+	border-radius: 2em;
+	letter-spacing: 0.1em;
+	width: fit-content;
+	transition: background-color 0.3s ease;
+}
+
+.showHide:hover {
+	cursor: pointer;
+	background-color: hsl(257, 27%, 26%);
 }
 
 @media screen and (max-width: 1000px) {

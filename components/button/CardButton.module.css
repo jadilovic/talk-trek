@@ -1,0 +1,14 @@
+.cardButton {
+	padding: 1em 2em;
+	color: white;
+	background-color: hsl(180, 66%, 49%);
+	border-radius: 2em;
+	letter-spacing: 0.1em;
+	width: fit-content;
+	transition: background-color 0.3s ease;
+}
+
+.cardButton:hover {
+	cursor: pointer;
+	background-color: hsl(180, 66%, 69%);
+}
