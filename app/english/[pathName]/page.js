@@ -65,6 +65,10 @@ const Exercise = () => {
 
 	return (
 		<main style={{ minHeight: '80vh' }}>
+			<CardButton
+				text="Create First Sentence"
+				createSentence={createNewSentence}
+			/>
 			{!sentence ? (
 				<h1 style={{ margin: '2em 0 0' }}>Loading...</h1>
 			) : (
@@ -73,28 +77,31 @@ const Exercise = () => {
 						Exercise: {exercise.exerciseName}
 					</h1>
 					<h4 style={{ margin: '0 0 2em' }}>{exercise.exerciseDescription}</h4>
-					{isLoading ? (
-						<h4>Loading...</h4>
-					) : (
-						<section className={styles.card}>
-							<h4 className="cardTitle">{`${sentenceIndex + 1} out of ${
-								exercise.exercises.length
-							}`}</h4>
-							<p>
-								<b>Sentence:</b> {sentence.sentence}
-							</p>
-							<button
-								className="showHide"
-								onClick={() => setShowAnswer(!showAnswer)}
-							>
-								{showAnswer ? 'Hide Answer' : 'Show Answer'}
-							</button>
-							{showAnswer ? <p>Tense: {sentence.tense}</p> : <p></p>}
-							<button onClick={handlePreviousSentence}>Previous</button>
-							<button onClick={handleNextSentence}>Next</button>
-							<CardButton text="Card Button" />
-						</section>
-					)}
+					<section className={styles.card}>
+						<h4 className="cardTitle">{`${sentenceIndex + 1} out of ${
+							exercise.exercises.length
+						}`}</h4>
+						{isLoading ? (
+							<h5>Loading...</h5>
+						) : (
+							<article>
+								<p>
+									<b>Sentence:</b> {sentence.sentence}
+								</p>
+								<button
+									className="showHide"
+									onClick={() => setShowAnswer(!showAnswer)}
+								>
+									{showAnswer ? 'Hide Answer' : 'Show Answer'}
+								</button>
+								{showAnswer ? <p>Tense: {sentence.tense}</p> : <p></p>}
+							</article>
+						)}
+
+						<button onClick={handlePreviousSentence}>Previous</button>
+						<button onClick={handleNextSentence}>Next</button>
+						<CardButton text="Card Button" />
+					</section>
 				</>
 			)}
 		</main>

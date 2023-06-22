@@ -23,10 +23,17 @@ export const GET = async (req, { params }) => {
 			messages: [{ role: 'user', content: exercise.aiPrompt }],
 		});
 
-		const messageContentArr =
-			response.data.choices[0].message.content.split(' Verb tense used: ');
+		console.log('AI PROMPT : ', exercise.aiPrompt);
+		console.log('MESSAGE CONTENT : ', response.data.choices[0].message.content);
+
+		const messageContentArr = response.data.choices[0].message.content
+			.replace(/\n/g, '')
+			.split(' Verb tense used: ');
 		const sentence = messageContentArr[0].replace('Sentence: ', '');
 		const tense = messageContentArr[1];
+
+		console.log('sentence : ', sentence);
+		console.log('tense : ', tense);
 
 		const newSentence = new VerbTense({
 			// sentence: response.data.choices[0].message.content,
