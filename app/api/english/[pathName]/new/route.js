@@ -1,6 +1,7 @@
 import { connectToDB } from '@/utils/database';
 import Exercise from '@/models/exercise';
 import VerbTense from '@/models/verb-tense';
+import addRandomVerbTenseToAiPrompt from './addRandomVerbTenseToAiPrompt';
 
 const { Configuration, OpenAIApi } = require('openai');
 
@@ -18,12 +19,16 @@ export const GET = async (req, { params }) => {
 			return new Response('Failed to find exercise', { status: 404 });
 		}
 
+		const aiPromptWithVerbTense = addRandomVerbTenseToAiPrompt(
+			exercise.aiPrompt
+		);
+
 		const response = await openai.createChatCompletion({
 			model: 'gpt-3.5-turbo',
-			messages: [{ role: 'user', content: exercise.aiPrompt }],
+			messages: [{ role: 'user', content: aiPromptWithVerbTense }],
 		});
 
-		console.log('AI PROMPT : ', exercise.aiPrompt);
+		console.log('AI PROMPT : ', aiPromptWithVerbTense);
 		console.log('MESSAGE CONTENT : ', response.data.choices[0].message.content);
 
 		const messageContentArr = response.data.choices[0].message.content

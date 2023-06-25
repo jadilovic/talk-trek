@@ -6,7 +6,7 @@ import Footer from '@/components/footer/Footer';
 const inter = Poppins({ subsets: ['latin'], weight: ['500', '700'] });
 
 export const metadata = {
-	title: 'TalkTrek - Practice English',
+	title: 'TalkTrek - English Exercises and Grammar Definitions',
 	description: 'Practice english grammar and practical use of english language',
 };
 
