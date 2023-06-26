@@ -17,7 +17,9 @@ const Navbar = () => {
 					<h1>TalkTrek</h1>
 				</Link>
 				<ul className={styles.links}>
-					<li className={styles.link}>Features</li>
+					<li className={styles.link}>
+						<Link href="/english">English</Link>
+					</li>
 					<li className={styles.link}>Pricing</li>
 					<li className={styles.link}>Resources</li>
 				</ul>

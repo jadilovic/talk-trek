@@ -77,7 +77,6 @@ const Exercise = () => {
 				<>
 					<h2 style={{ margin: '2em 0 0' }}>Exercise:</h2>
 					<h2 style={{ margin: '0 0 1em' }}>{exercise.exerciseName}</h2>
-					<h4 style={{ margin: '0 0 2em' }}>{exercise.exerciseDescription}</h4>
 					<section className={styles.card}>
 						<h4 className="cardTitle">{`Exercise ${sentenceIndex + 1} out of ${
 							exercise.exercises.length
@@ -107,6 +106,7 @@ const Exercise = () => {
 						/>
 						<CardButton text="Next &raquo;" handleEvent={handleNextSentence} />
 					</section>
+					<h4 style={{ margin: '0 0 2em' }}>{exercise.exerciseDescription}</h4>
 				</>
 			)}
 		</main>
