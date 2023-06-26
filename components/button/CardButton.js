@@ -1,8 +1,8 @@
 import styles from './CardButton.module.css';
 
-const CardButton = ({ text, createSentence }) => {
+const CardButton = ({ text, handleEvent }) => {
 	return (
-		<button onClick={() => createSentence()} className={styles.cardButton}>
+		<button onClick={() => handleEvent()} className={styles.cardButton}>
 			{text}
 		</button>
 	);

@@ -4,6 +4,7 @@
 	text-align: center;
 	border-radius: 1em;
 	border: 0.1em solid hsl(0, 0%, 75%);
+	margin-bottom: 2em;
 }
 
 .cardTitle {
@@ -13,4 +14,35 @@
 
 .card:hover {
 	border: 0.1em solid hsl(180, 66%, 49%);
+}
+
+.sentence {
+	margin: 1em 0;
+}
+
+.show {
+	margin: 1em 0;
+	transform: scale(1);
+	transition: transform 0.3s ease-in-out;
+}
+
+.sentence,
+.show {
+	font-size: 1.2em;
+}
+
+.hide {
+	margin: 1em 0;
+	transform: scale(0);
+}
+
+.loading {
+	min-height: 8.43em;
+}
+
+@media screen and (max-width: 768px) {
+	.sentence,
+	.show {
+		font-size: 1em;
+	}
 }

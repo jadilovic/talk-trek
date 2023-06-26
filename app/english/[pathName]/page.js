@@ -49,6 +49,7 @@ const Exercise = () => {
 
 	const handleNextSentence = () => {
 		setIsLoading(true);
+		setShowAnswer(false);
 		if (sentenceIndex < exercise.exercises.length - 1) {
 			setSentenceIndex(sentenceIndex + 1);
 		} else {
@@ -59,33 +60,33 @@ const Exercise = () => {
 	const handlePreviousSentence = () => {
 		if (sentenceIndex > 0) {
 			setIsLoading(true);
+			setShowAnswer(false);
 			setSentenceIndex(sentenceIndex - 1);
 		}
 	};
 
 	return (
-		<main style={{ minHeight: '80vh' }}>
-			<CardButton
+		<main style={{ minHeight: '80vh', textAlign: 'center' }}>
+			{/* <CardButton
 				text="Create First Sentence"
-				createSentence={createNewSentence}
-			/>
+				handleEvent={createNewSentence}
+			/> */}
 			{!sentence ? (
 				<h1 style={{ margin: '2em 0 0' }}>Loading...</h1>
 			) : (
 				<>
-					<h1 style={{ margin: '2em 0 0' }}>
-						Exercise: {exercise.exerciseName}
-					</h1>
+					<h2 style={{ margin: '2em 0 0' }}>Exercise:</h2>
+					<h2 style={{ margin: '0 0 1em' }}>{exercise.exerciseName}</h2>
 					<h4 style={{ margin: '0 0 2em' }}>{exercise.exerciseDescription}</h4>
 					<section className={styles.card}>
-						<h4 className="cardTitle">{`${sentenceIndex + 1} out of ${
+						<h4 className="cardTitle">{`Exercise ${sentenceIndex + 1} out of ${
 							exercise.exercises.length
 						}`}</h4>
 						{isLoading ? (
-							<h5>Loading...</h5>
+							<h3 className={styles.loading}>Loading...</h3>
 						) : (
 							<article>
-								<p>
+								<p className={styles.sentence}>
 									<b>Sentence:</b> {sentence.sentence}
 								</p>
 								<button
@@ -94,13 +95,17 @@ const Exercise = () => {
 								>
 									{showAnswer ? 'Hide Answer' : 'Show Answer'}
 								</button>
-								{showAnswer ? <p>Tense: {sentence.tense}</p> : <p></p>}
+								<p className={showAnswer ? styles.show : styles.hide}>
+									<b>Tense:</b> {sentence.tense}
+								</p>
 							</article>
 						)}
 
-						<button onClick={handlePreviousSentence}>Previous</button>
-						<button onClick={handleNextSentence}>Next</button>
-						<CardButton text="Card Button" />
+						<CardButton
+							text="&laquo; Previous"
+							handleEvent={handlePreviousSentence}
+						/>
+						<CardButton text="Next &raquo;" handleEvent={handleNextSentence} />
 					</section>
 				</>
 			)}

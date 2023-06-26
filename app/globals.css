@@ -164,13 +164,15 @@ ul {
 	background-color: hsl(257, 27%, 26%);
 	border-radius: 2em;
 	letter-spacing: 0.1em;
+	font-weight: 700;
 	width: fit-content;
+	min-width: 15em;
 	transition: background-color 0.3s ease;
 }
 
 .showHide:hover {
 	cursor: pointer;
-	background-color: hsl(257, 27%, 26%);
+	background-color: hsl(257, 27%, 46%);
 }
 
 @media screen and (max-width: 1000px) {

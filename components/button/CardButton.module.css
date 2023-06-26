@@ -1,14 +1,23 @@
 .cardButton {
 	padding: 1em 2em;
 	color: white;
-	background-color: hsl(180, 66%, 49%);
-	border-radius: 2em;
+	background-color: hsl(180, 66%, 29%);
+	border-radius: 1em;
 	letter-spacing: 0.1em;
+	font-weight: 700;
 	width: fit-content;
+	min-width: 11em;
+	margin: 0 1em;
 	transition: background-color 0.3s ease;
 }
 
 .cardButton:hover {
 	cursor: pointer;
-	background-color: hsl(180, 66%, 69%);
+	background-color: hsl(180, 66%, 49%);
+}
+
+@media screen and (max-width: 768px) {
+	.cardButton {
+		margin-top: 1em;
+	}
 }
