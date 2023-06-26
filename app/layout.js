@@ -6,8 +6,13 @@ import Footer from '@/components/footer/Footer';
 const inter = Poppins({ subsets: ['latin'], weight: ['500', '700'] });
 
 export const metadata = {
+	charset: 'UTF-8',
+	viewport: 'width=device-width, initial-scale=1.0',
 	title: 'TalkTrek - English Exercises and Grammar Definitions',
 	description: 'Practice english grammar and practical use of english language',
+	author: 'Jasmin Adilovic',
+	keywords:
+		'english, practice, learn, exercise, grammar, language, verb, noun, tense, pronouns, words, sentences, talk, speak, communicate',
 };
 
 export default function RootLayout({ children }) {
